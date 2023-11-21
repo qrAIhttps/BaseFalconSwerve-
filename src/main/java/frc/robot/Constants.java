@@ -9,7 +9,7 @@ import edu.wpi.first.math.trajectory.TrapezoidProfile;
 import edu.wpi.first.math.util.Units;
 import frc.lib.util.COTSFalconSwerveConstants;
 import frc.lib.util.SwerveModuleConstants;
-
+/* spell-checker: disable */
 public final class Constants {
     public static final double stickDeadband = 0.1;
 
@@ -145,4 +145,67 @@ public final class Constants {
             new TrapezoidProfile.Constraints(
                 kMaxAngularSpeedRadiansPerSecond, kMaxAngularSpeedRadiansPerSecondSquared);
     }
+    public static class CANID {
+        // drive motors
+        public static final int topDriveLeftCANID = 5; // 5
+        public static final int topDriveRightCANID = 7;
+        public static final int bottomDriveLeftCANID = 9;
+        public static final int bottomDriveRightCANID = 3; // 3
+    
+        // turn motors
+        public static final int topTurnLeftCANID = 6; // 6
+        public static final int topTurnRightCANID = 8;
+        public static final int bottomTurnLeftCANID = 1;
+        public static final int bottomTurnRightCANID = 4; // 4
+    
+        // cancoder
+        public static final int topTurnLeftCANCoderCANID = 18; // 18
+        public static final int topTurnRightCANCoderCANID = 17;
+        public static final int bottomTurnLeftCANCoderCANID = 15; // BAD
+        public static final int bottomTurnRightCANCoderCANID = 16; // 16
+    
+        // intakes
+        public static final int topLeftIntakeCANID = 57;
+        public static final int topRightIntakeCANID = 62;
+        public static final int bottomLeftIntakeCANID = 60;
+        public static final int bottomRightIntakeCANID = 61;
+        public static final int topRollersCANID = 59;
+        public static final int bottomRollersCANID = 58;
+    
+        // revh ph
+    
+        public static final int revpdhCANID = 23; // MUST MAKE SURE IT IS ON RIO NOT CANIVORE
+    
+        public static final int pigeonCANID = 30;
+      }
+    
+      // --------------------------------------------------------------------//
+      // INTAKE
+      // --------------------------------------------------------------------//
+      public static class MKINTAKE {
+        public static final NeutralMode rollerNeutralMode = NeutralMode.Coast;
+        public static final NeutralMode intakeNeutralMode = NeutralMode.Brake;
+    
+    
+        public static final double kP = 0.00002;
+        public static final double kI = 0.0000001;
+        public static final double kD = 0.0000;
+        public static final double kF = 0;
+    
+        public static final double[] pidf = {kP, kI, kD, kF};
+    
+        public static final boolean topLeftInverted = true;
+        public static final boolean topRightInverted = false;
+        public static final boolean bottomLeftInverted = true;
+        public static final boolean bottomRightInverted = false;
+    
+        public static final double rollerPercentSpeed = .7;
+        public static final double intakePercentSpeed = .7;
+    
+        public static final double greerRatio = 20.0 / 18.0 / 45.0;
+    
+        public static final double topOutNative = 0;
+        public static final double bottomOutNative = 0;
+      }
+    
 }
